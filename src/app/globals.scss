@@ -1,0 +1,12 @@
+@import 'styles';
+
+* {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+   @include full-screen;
+   @include zero-indent;
+   @include text-settings;
+}

@@ -1,0 +1,26 @@
+@import 'styles';
+
+// AXIS
+.x {
+   width: 100%;
+}
+
+.y {
+   height: 100%;
+}
+
+// AXIS-SIZE
+
+.x-s {
+   height: 1px;
+}
+
+.y-s {
+   width: 1px;
+}
+
+// VARIANTS
+
+.primary {
+   background-color: rgba($primary, 1);
+}

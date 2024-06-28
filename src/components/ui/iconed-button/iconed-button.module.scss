@@ -1,0 +1,58 @@
+@import 'styles';
+
+.iconedButton {
+   @include button;
+
+   padding: 0;
+}
+
+/* VARIANTS */
+
+.primary {
+   svg {
+      path {
+         fill: $primary;
+      }
+   }
+
+   &:disabled {
+      svg {
+         path {
+            fill: rgba($primary, 0.5);
+         }
+      }
+   }
+}
+
+/* SIZES */
+
+.m {
+   svg {
+      width: 24px;
+      height: 24px;
+   }
+}
+
+/* ICON POSITION */
+
+.icon-left {
+   flex-direction: row-reverse;
+}
+
+.icon-right {
+   flex-direction: row;
+}
+
+/* POSITION */
+
+.left {
+   @include align-left;
+}
+
+.right {
+   @include align-right;
+}
+
+.center {
+   @include align-center;
+}

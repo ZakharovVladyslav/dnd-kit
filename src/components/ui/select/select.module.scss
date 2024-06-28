@@ -1,0 +1,135 @@
+@import 'styles';
+
+.wrapper {
+   .selectWrapper {
+      position: relative;
+
+      box-sizing: border-box;
+   }
+
+   .options {
+      @include vertical-scroll;
+
+      box-sizing: border-box;
+
+      .option {
+         box-sizing: border-box;
+      }
+   }
+}
+
+/* SIZES */
+
+.m {
+   @include flex(column, $gap: 8px);
+
+   .label {
+      font-size: 16px;
+      font-weight: 500;
+
+      margin-left: 12px;
+   }
+
+   .select {
+      @include button;
+      @include box-shadow-m;
+      @include flex(row, space-between, center, $gap: 32px);
+
+      padding: 12px 24px;
+
+      border-radius: 8px;
+
+      font-size: 24px;
+
+      &.opened {
+         border-bottom-left-radius: 0px;
+         border-bottom-right-radius: 0px;
+      }
+
+      .chevron {
+         width: 16px;
+         height: 16px;
+      }
+   }
+
+   .options {
+      @include flex(column, $gap: 2px);
+
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+      width: 100%;
+      max-height: 256px;
+
+      margin: 0;
+
+      border-radius: 8px;
+
+      &.opened {
+         border-top-left-radius: 0px;
+         border-top-right-radius: 0px;
+
+         border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .option {
+         @include button;
+
+         width: 100%;
+
+         padding: 8px 24px;
+
+         font-size: 16px;
+      }
+   }
+
+   .errorWrapper {
+      @include flex(row, center, center, 4px);
+
+      margin-left: 12px;
+
+      .warnIcon {
+         width: 20px;
+         height: 20px;
+      }
+
+      .error {
+         font-weight: 600;
+      }
+   }
+}
+
+/* VARIANTS */
+
+.primary {
+   .select {
+      .placeholder {
+         color: rgba(0, 0, 0, 0.5);
+      }
+   }
+
+   .options {
+      @include box-shadow-m;
+
+      background-color: white;
+
+      .option {
+         @include hover {
+            background-color: rgba(0, 0, 0, 0.1);
+         }
+      }
+   }
+
+   .errorWrapper {
+      .warnIcon {
+         path {
+            fill: red;
+         }
+      }
+
+      .error {
+         color: red;
+      }
+   }
+}

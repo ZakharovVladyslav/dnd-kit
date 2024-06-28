@@ -1,0 +1,24 @@
+@import 'styles';
+
+.main {
+   @include flex(row, center, center, 12px);
+
+   padding: 68px;
+
+   .components {
+      @include flex(column, flex-start, flex-start, 80px);
+
+      width: 100%;
+
+      .component {
+         @include flex(row, flex-start, flex-start, 24px);
+
+         width: 100%;
+
+         p {
+            font-weight: 700;
+            font-size: 24px;
+         }
+      }
+   }
+}

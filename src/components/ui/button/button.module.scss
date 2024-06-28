@@ -1,0 +1,41 @@
+@import 'styles';
+
+.button {
+   @include button;
+}
+
+/* VARIANTS */
+
+.primary {
+   background-color: white;
+
+   @include hover {
+      background-color: rgb(200, 200, 200);
+   }
+}
+
+/* SIZES */
+
+.m {
+   @include box-shadow-m;
+
+   font-size: 24px;
+
+   padding: 12px 24px;
+
+   border-radius: 8px;
+}
+
+/* POSITION */
+
+.left {
+   @include align-left;
+}
+
+.right {
+   @include align-right;
+}
+
+.center {
+   @include align-center;
+}

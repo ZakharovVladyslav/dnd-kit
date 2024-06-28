@@ -1,0 +1,91 @@
+@import 'styles';
+
+.wrapper {
+   @include input;
+
+   .label {
+      .optional {
+         font-size: 0.75em;
+      }
+   }
+
+   .inputWrapper {
+      .input {
+         @include input;
+      }
+
+      &.icon-left {
+         flex-direction: row-reverse;
+      }
+   }
+}
+
+/* VARIANTS */
+
+.primary {
+   .label {
+      font-weight: 500;
+
+      .optional {
+         color: rgba($primary, 0.5);
+      }
+   }
+
+   .errorWrapper {
+      span {
+         color: red;
+      }
+
+      svg {
+         path {
+            fill: red;
+         }
+      }
+   }
+}
+
+/* SIZES */
+
+.m {
+   @include flex(column, center, flex-start, 8px);
+
+   width: fit-content;
+
+   .label {
+      font-size: 16px;
+      margin-left: 12px;
+   }
+
+   .inputWrapper {
+      @include flex(row, center, center, 12px);
+      @include box-shadow-m;
+
+      padding: 12px 24px;
+
+      border-radius: 8px;
+
+      .input {
+         font-size: 24px;
+      }
+
+      svg {
+         width: 16px;
+         height: 16px;
+      }
+   }
+
+   .errorWrapper {
+      @include flex(row, flex-start, center, 4px);
+
+      margin-left: 8px;
+
+      span {
+         font-weight: 700;
+      }
+
+      svg {
+         width: 24px;
+         height: 24px;
+      }
+   }
+}

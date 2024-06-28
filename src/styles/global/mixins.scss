@@ -1,0 +1,136 @@
+@import './variables.scss';
+
+/* COMPONENTS */
+
+@mixin button {
+   display: block;
+
+   border: none;
+
+   background-color: transparent;
+
+   cursor: pointer;
+
+   transition: background-color 0.15s ease-in-out;
+
+   &:focus,
+   &:active,
+   &:focus-visible {
+      outline: none;
+   }
+
+   &:disabled {
+      cursor: not-allowed;
+   }
+}
+
+@mixin input {
+   border: none;
+
+   background-color: transparent;
+
+   padding: 0;
+
+   &:focus,
+   &:active,
+   &:focus-visible {
+      outline: none;
+   }
+}
+
+/* SIZES */
+
+@mixin full-screen {
+   width: 100vw;
+   width: 100dvw;
+   height: 100vh;
+   height: 100dvh;
+}
+
+@mixin full-size {
+   width: 100%;
+   height: 100%;
+}
+
+@mixin zero-indent {
+   margin: 0;
+   padding: 0;
+}
+
+/* TEXT */
+
+@mixin text-settings {
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   a,
+   p {
+      @include zero-indent;
+   }
+}
+
+/* SCROLL */
+
+@mixin vertical-scroll {
+   overflow-x: none;
+   overflow-y: auto;
+}
+
+@mixin horizontal-scroll {
+   overflow-x: auto;
+   overflow-y: none;
+}
+
+/* SHADOW */
+
+@mixin box-shadow-s {
+   box-shadow: 0 3px 6px rgba($primary, 0.15);
+}
+
+@mixin box-shadow-m {
+   box-shadow: 0 6px 12px rgba($primary, 0.15);
+}
+
+/* ALIGNMENT */
+
+@mixin align-left {
+   margin-right: auto;
+}
+
+@mixin align-right {
+   margin-left: auto;
+}
+
+@mixin align-center {
+   margin: 0 auto;
+}
+
+/* FLEX */
+
+@mixin flex(
+   $direction: row,
+   $justify: flex-start,
+   $align: flex-start,
+   $gap: 0,
+   $wrap: wrap
+) {
+   display: flex;
+   flex-direction: $direction;
+   justify-content: $justify;
+   align-items: $align;
+   gap: $gap;
+   flex-wrap: $wrap;
+}
+
+/* UTILS */
+
+@mixin hover {
+   @media (hover: hover) {
+      &:not(:disabled):hover {
+         @content;
+      }
+   }
+}
