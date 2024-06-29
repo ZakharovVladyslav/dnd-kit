@@ -5,20 +5,9 @@
 
    padding: 68px;
 
-   .components {
-      @include flex(column, flex-start, flex-start, 80px);
-
-      width: 100%;
-
-      .component {
-         @include flex(row, flex-start, flex-start, 24px);
-
-         width: 100%;
-
-         p {
-            font-weight: 700;
-            font-size: 24px;
-         }
-      }
+   .droppables {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
    }
 }
